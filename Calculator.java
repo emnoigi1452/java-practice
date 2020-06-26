@@ -1,4 +1,4 @@
-package test.calculator.main;
+package me.ductrader.main;
 
 import java.util.Scanner;
 
@@ -16,7 +16,7 @@ class Scratch {
     static void inputRoot() {
         System.out.println("Enter the value you want to root: ");
     }
-    static void resultIs(double resultValue) {
+    static void resultIs() {
         System.out.println("The result is: ");
     }
     static void invalid() { System.out.println("Invalid command.."); }
@@ -72,7 +72,9 @@ class Scratch {
             }
 
             resultValue = inputValue1 + inputValue2;
-            resultIs(resultValue);
+            resultIs();
+            System.out.println(resultValue);
+            
         } else if (cmdName.equals("subtract")) {
             input1();
             try {
@@ -89,7 +91,9 @@ class Scratch {
             }
 
             resultValue = inputValue1 + inputValue2;
-            resultIs(resultValue);
+            resultIs();
+            System.out.println(resultValue);
+            
         } else if (cmdName.equals("multiply")) {
             input1();
             try {
@@ -113,7 +117,8 @@ class Scratch {
             } else if (inputValue1 == 0 && inputValue2 == 0) {
                 System.out.println("0 x 0 is 0, we don't need to calculate this, don't we ?");
             } else {
-                resultIs(resultValue);
+                resultIs();
+                System.out.println(resultValue);
             }
 
         }
@@ -139,7 +144,8 @@ class Scratch {
                 System.out.println("0 dividing with any value except 0 would still be 0");
             } else {
                 resultValue = inputValue1 / inputValue2;
-                resultIs(resultValue);
+                resultIs();
+                System.out.println(resultValue);
             }
         }
         else if (cmdName.equals("modulo")) {
@@ -167,7 +173,8 @@ class Scratch {
             }
             else {
                 resultValue = inputValue1 % inputValue2;
-                resultIs(resultValue);
+                resultIs();
+                System.out.println(resultValue);
             }
         }
 
@@ -189,7 +196,8 @@ class Scratch {
             }
 
             resultValue = Math.pow(inputValue1, inputValue2);
-            resultIs(resultValue);
+            resultIs();
+            System.out.println(resultValue);
         }
 
         else if(cmdName.equals("sqrt")) {
@@ -200,11 +208,12 @@ class Scratch {
             finally {
                 rootValue = inputRoot.nextDouble();
             }
-            
+
             resultValue = Math.sqrt(rootValue);
-            resultIs(resultValue);
+            resultIs();
+            System.out.println(resultValue);
         }
-        
+
         else if(cmdName.equals("curt")) {
             inputRoot();
             try {
@@ -213,11 +222,12 @@ class Scratch {
             finally {
                 rootValue = inputRoot.nextDouble();
             }
-            
+
             resultValue = Math.cbrt(rootValue);
-            resultIs(resultValue);
+            resultIs();
+            System.out.println(resultValue);
         }
-        
+
         credits();
         System.exit(1);
     }
