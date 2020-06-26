@@ -1,258 +1,224 @@
-package test;
+package test.calculator.main;
 
 import java.util.Scanner;
 
-public class Methods {
-	
-	static void end() {
-		System.out.println("Ending program...");
-	}
-	
-	static void invalid() {
-		System.out.println("Invalid command/expression...");
-	}
-	
-	static void input1() {
-		System.out.println("Please enter the first number: ");
-	}
-	
-	static void input2() {
-		System.out.println("Please enter the second number: ");
-	}
-	
-	static void invalidNum() {
-		System.out.println("The number inputted has an invalid value!");
-	}
-	
-	static void credits()
-	{
-		System.out.println("");
-		System.out.println("Program by: emnoigi1452");
-		System.out.println("Tool: Eclipse IDE (March 2020)");
-		System.out.println("Platform: Java 8 - 64 bit");
-		System.out.println("Goodbye...");
-	}
-	
-	private static Scanner command1;
-	private static Scanner expression1;
-	private static Scanner num1;
-	private static Scanner num2;
-	static String commandInput;
-	static String expressionSelection;
-	static double numX;
-	static double numY;
-	static double valueZ;
-	
-	public static void main(String[] args) {
-		System.out.println("Welcome to the calculator");
-		System.out.println("Please enter a command: ");
-		System.out.println("Valid commands: calc, quit, leave, start");
-		
-		try {
-			command1 = new Scanner(System.in);
-		}
-		finally {
-			commandInput = command1.nextLine();
-		}
-		
-		if(commandInput.equals("leave") || commandInput.equals("quit")) {
-			end();
-			System.exit(0);
-		}
-		
-		else if (!(commandInput.equals("start") || commandInput.equals("calc"))) {
-			invalid();
-			end();
-			System.exit(1);
-		}
-		
-		else {
-			System.out.println("Please select an expression: ");
-			System.out.println("sum, subtract, multiply, division, modulo, power");
-			
-			try {
-				expression1 = new Scanner(System.in);
-			}
-			finally {
-				expressionSelection = expression1.nextLine();
-			}
-			
-			if (!(expressionSelection.equals("sum") || expressionSelection.equals("subtract") || expressionSelection.equals("multiply") || expressionSelection.equals("division") || expressionSelection.equals("modulo") || expressionSelection.equals("power") )) {
-				invalid();
-				end();
-				System.exit(2);
-			}
-			
-			else if (expressionSelection.equals("sum")) {
-				input1();
-				
-				try {
-					num1 = new Scanner(System.in);
-				}
-				finally {
-					numX = num1.nextDouble();
-				}
-				
-				input2();
-				
-				try {
-					num2 = new Scanner(System.in);
-				}
-				finally {
-					numY = num2.nextDouble();
-				}
-				
-				valueZ = numX + numY;
-				System.out.println("The result is: " + valueZ);
-			}
-			
-			else if (expressionSelection.equals("subtract")) {
-				input1();
-				
-				try {
-					num1 = new Scanner(System.in);
-				}
-				finally {
-					numX = num1.nextDouble();
-				}
-				
-				input2();
-				
-				try {
-					num2 = new Scanner(System.in);
-				}
-				finally {
-					numY = num2.nextDouble();
-				}
-				
-				valueZ = numX - numY;
-				System.out.println("The result is: " + valueZ);
-			}
-			
-			else if (expressionSelection.equals("multiply")) {
-				input1();
-				
-				try {
-					num1 = new Scanner(System.in);
-				}
-				finally {
-					numX = num1.nextDouble();
-				}
-				
-				input2();
-				
-				try {
-					num2 = new Scanner(System.in);
-				}
-				finally {
-					numY = num2.nextDouble();
-				}
-				
-				valueZ = numX * numY;
-				if (numY == 0 || numX == 0) {
-					System.out.println("Literally a multiplication with 0 -.-");
-				}
-				System.out.println("The result is: " + valueZ);
-			}
-			
-			else if (expressionSelection.equals("division")) {
-				input1();
-				
-				try {
-					num1 = new Scanner(System.in);
-				}
-				finally {
-					numX = num1.nextDouble();
-				}
-				
-				input2();
-				
-				try {
-					num2 = new Scanner(System.in);
-				}
-				finally {
-					numY = num2.nextDouble();
-				}
-				
-				if (numY == 0) {
-					invalidNum();
-					end();
-					System.exit(3);
-				}
-				
-				else {
-					valueZ = numX / numY;
-					System.out.println("The result is: " + valueZ);
-				}
-			}
-			
-			else if (expressionSelection.equals("modulo")) {
-				input1();
-				
-				try {
-					num1 = new Scanner(System.in);
-				}
-				finally {
-					numX = num1.nextDouble();
-				}
-				
-				input2();
-				
-				try {
-					num2 = new Scanner(System.in);
-				}
-				finally {
-					numY = num2.nextDouble();
-				}
-				
-				if(numY == 0) {
-					invalidNum();
-					end();
-					System.exit(4);
-				}
-				else {
-					valueZ = numX / numY;
-					System.out.println("The result is: " + valueZ);
-				}
-			}
-			
-			else if (expressionSelection.equals("power")) {
-				input1();
-				
-				try {
-					num1 = new Scanner(System.in);
-				}
-				finally {
-					numX = num1.nextDouble();
-				}
-				
-				input2();
-				
-				try {
-					num2 = new Scanner(System.in);
-				}
-				finally {
-					numY = num2.nextDouble();
-				}
-				
-				if(numY != 0 || numY > 0) {
-					System.out.println("The value shall be a positive integer!");
-				}
-				else if(numY != 0 || numY < 0) {
-					System.out.println("The value shall be a decimal value!");
-				}
-				else {
-					System.out.println("The power of every number to 0 will always be 1");
-				}
-				
-				valueZ = Math.pow(numX, numY);
-				System.out.println("The result is: " + valueZ);
-			}
-		}
-		
-		credits();
-		System.exit(5);
-		
-	}
+class Scratch {
+    static void inputCmd1() {
+        System.out.println("Enter a command: ");
+        System.out.println("Valid commands: sum, subtract, multiply, division, modulo, power, sqrt, curt");
+    }
+    static void input1() {
+        System.out.println("Enter the first number: ");
+    }
+    static void input2() {
+        System.out.println("Enter the second number: ");
+    }
+    static void inputRoot() {
+        System.out.println("Enter the value you want to root: ");
+    }
+    static void resultIs(double resultValue) {
+        System.out.println("The result is: ");
+    }
+    static void invalid() { System.out.println("Invalid command.."); }
+    static void invalidValue() { System.out.println("Invalid value..."); }
+    static void credits() {
+        System.out.println("So yea i coded this because i'm still new to this");
+        System.out.println("alright bye! :)");
+    }
 
+    private static Scanner input1;
+    private static Scanner input2;
+    private static Scanner inputRoot;
+    private static Scanner command;
+    static double inputValue1;
+    static double inputValue2;
+    static double rootValue;
+    static double resultValue;
+    static String cmdName;
+
+
+    public static void main(String[] args) {
+        inputCmd1();
+        try {
+            command = new Scanner(System.in);
+        } finally {
+            cmdName = command.nextLine();
+        }
+
+        if (!(cmdName.equals("sum") ||
+                cmdName.equals("subtract") ||
+                cmdName.equals("multiply") ||
+                cmdName.equals("division") ||
+                cmdName.equals("modulo") ||
+                cmdName.equals("power") ||
+                cmdName.equals("sqrt") ||
+                cmdName.equals("curt"))) {
+            invalid();
+            System.exit(0);
+
+        } else if (cmdName.equals("sum")) {
+            input1();
+            try {
+                input1 = new Scanner(System.in);
+            } finally {
+                inputValue1 = input1.nextDouble();
+            }
+
+            input2();
+            try {
+                input2 = new Scanner(System.in);
+            } finally {
+                inputValue2 = input2.nextDouble();
+            }
+
+            resultValue = inputValue1 + inputValue2;
+            resultIs(resultValue);
+        } else if (cmdName.equals("subtract")) {
+            input1();
+            try {
+                input1 = new Scanner(System.in);
+            } finally {
+                inputValue1 = input1.nextDouble();
+            }
+
+            input2();
+            try {
+                input2 = new Scanner(System.in);
+            } finally {
+                inputValue2 = input2.nextDouble();
+            }
+
+            resultValue = inputValue1 + inputValue2;
+            resultIs(resultValue);
+        } else if (cmdName.equals("multiply")) {
+            input1();
+            try {
+                input1 = new Scanner(System.in);
+            } finally {
+                inputValue1 = input1.nextDouble();
+            }
+
+            input2();
+            try {
+                input2 = new Scanner(System.in);
+            } finally {
+                inputValue2 = input2.nextDouble();
+            }
+
+            resultValue = inputValue1 * inputValue2;
+
+            if (inputValue1 == 0 || inputValue2 == 0) {
+                System.out.println("You're literally multiplying a number to 0" +
+                        " ,it's still going to end up being 0!");
+            } else if (inputValue1 == 0 && inputValue2 == 0) {
+                System.out.println("0 x 0 is 0, we don't need to calculate this, don't we ?");
+            } else {
+                resultIs(resultValue);
+            }
+
+        }
+        else if (cmdName.equals("division")) {
+            input1();
+            try {
+                input1 = new Scanner(System.in);
+            } finally {
+                inputValue1 = input1.nextDouble();
+            }
+
+            input2();
+            try {
+                input2 = new Scanner(System.in);
+            } finally {
+                inputValue2 = input2.nextDouble();
+            }
+
+            if (inputValue2 == 0) {
+                invalidValue();
+                System.exit(0);
+            } else if (inputValue1 == 0) {
+                System.out.println("0 dividing with any value except 0 would still be 0");
+            } else {
+                resultValue = inputValue1 / inputValue2;
+                resultIs(resultValue);
+            }
+        }
+        else if (cmdName.equals("modulo")) {
+            input1();
+            try {
+                input1 = new Scanner(System.in);
+            } finally {
+                inputValue1 = input1.nextDouble();
+            }
+
+            input2();
+            try {
+                input2 = new Scanner(System.in);
+            }
+            finally {
+                inputValue2 = input2.nextDouble();
+            }
+
+            if (inputValue2 == 0) {
+                invalidValue();
+                System.exit(0);
+            }
+            else if (inputValue1 == 0) {
+                System.out.println("0 has no modulo against any number!");
+            }
+            else {
+                resultValue = inputValue1 % inputValue2;
+                resultIs(resultValue);
+            }
+        }
+
+        else if(cmdName.equals("power")) {
+            input1();
+            try {
+                input1 = new Scanner(System.in);
+            }
+            finally {
+                inputValue1 = input1.nextDouble();
+            }
+
+            input2();
+            try {
+                input2 = new Scanner(System.in);
+            }
+            finally {
+                inputValue2 = input2.nextDouble();
+            }
+
+            resultValue = Math.pow(inputValue1, inputValue2);
+            resultIs(resultValue);
+        }
+
+        else if(cmdName.equals("sqrt")) {
+            inputRoot();
+            try {
+                inputRoot = new Scanner(System.in);
+            }
+            finally {
+                rootValue = inputRoot.nextDouble();
+            }
+            
+            resultValue = Math.sqrt(rootValue);
+            resultIs(resultValue);
+        }
+        
+        else if(cmdName.equals("curt")) {
+            inputRoot();
+            try {
+                inputRoot = new Scanner(System.in);
+            }
+            finally {
+                rootValue = inputRoot.nextDouble();
+            }
+            
+            resultValue = Math.cbrt(rootValue);
+            resultIs(resultValue);
+        }
+        
+        credits();
+        System.exit(1);
+    }
 }
