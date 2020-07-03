@@ -125,7 +125,7 @@ class Main {
         finally {
             guess = guessValue.nextInt();
         }
-        
+
         if((guess > stableValue && guess - stableValue >= 1000) ||
                 (stableValue > guess && stableValue - guess >= 1000)) {
             reallyFar();
@@ -144,7 +144,7 @@ class Main {
         }
         else if (guess == stableValue) {
             congrats(stableValue);
-            break;
+            System.exit(0);
         }
         while (guess != stableValue)
         {
