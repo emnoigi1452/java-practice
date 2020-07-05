@@ -105,6 +105,7 @@ class Calculator {
 
                         result = num1 + num2;
                         display1(result);
+                        break;
 
                     case "subtract":
                         input1();
@@ -123,6 +124,7 @@ class Calculator {
 
                         result = num1 - num2;
                         display1(result);
+                        break;
 
                     case "multiply":
                         input1();
@@ -147,6 +149,7 @@ class Calculator {
                             result = num1 * num2;
                             display1(result);
                         }
+                        break;
 
                     case "division":
                         input1();
@@ -177,6 +180,7 @@ class Calculator {
                             result = num1 / num2;
                             display1(result);
                         }
+                        break;
 
                     case "modulo":
                         input1();
@@ -207,6 +211,7 @@ class Calculator {
                             result = num1 % num2;
                             display1(result);
                         }
+                        break;
 
                     case "exponentiation":
                         base();
@@ -227,6 +232,7 @@ class Calculator {
 
                         result = Math.pow(num1, num2);
                         display1(result);
+                        break;
 
                     case "factorial":
                         inputVal();
@@ -241,6 +247,7 @@ class Calculator {
                             result *= j;
                         }
                         display1(result);
+                        break;
 
                     case "sqrt":
                         inputVal();
@@ -253,6 +260,7 @@ class Calculator {
 
                         result = Math.sqrt(num1);
                         display1(result);
+                        break;
 
                     case "cbrt":
                         inputVal();
@@ -265,6 +273,7 @@ class Calculator {
 
                         result = Math.cbrt(num1);
                         display1(result);
+                        break;
 
                     case "random":
                         input1();
@@ -285,6 +294,7 @@ class Calculator {
 
                         randomVal = (int)Math.random() * ((num2 - num1) +1) + num1;
                         display2(randomVal);
+                        break;
 
                     case "prime":
                         boolean notPrime = false;
@@ -295,7 +305,7 @@ class Calculator {
                         finally {
                             num1 = val1.nextDouble();
                         }
-                        
+
                         for (int i = 2; i <= num1 / 2; ++i) {
                             if(num1 % i == 0) {
                                 notPrime = true;
@@ -308,11 +318,12 @@ class Calculator {
                         else {
                             notPrime();
                         }
-                        
+                        break;
+
                     default:
                         invalidExp();
                         System.exit(0);
-                            
+                        break;
                 }
             default:
                 invalidCmd();
