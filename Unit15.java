@@ -33,5 +33,6 @@ class Main {
         wordLength = word2.length();
         String result2 = word2.substring((wordLength-1) - lengthEnd, wordLength - 1);
         System.out.println("Result: " + result2);
+        System.exit(0);
     }
 }
