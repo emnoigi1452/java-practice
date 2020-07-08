@@ -28,9 +28,8 @@ class Main {
         }
         else {
             System.out.println("You typed the following words: ");
-            int listLength = wordList.size();
-            for (int n = 0; n <= listLength; ++n) {
-                System.out.println(wordList.get(n));
+            for (String words : wordList) {
+                System.out.println(words);
             }
         }
     }
