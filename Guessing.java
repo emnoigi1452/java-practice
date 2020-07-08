@@ -126,26 +126,6 @@ class Main {
             guess = guessValue.nextInt();
         }
 
-        if((guess > stableValue && guess - stableValue >= 1000) ||
-                (stableValue > guess && stableValue - guess >= 1000)) {
-            reallyFar();
-        }
-        else if ((guess > stableValue && guess - stableValue >= 100 && guess - stableValue < 1000) ||
-                (guess < stableValue && stableValue - guess >= 100 && stableValue - guess < 1000 )) {
-            Far();
-        }
-        else if ((guess > stableValue && guess - stableValue >= 10 && guess - stableValue < 100) ||
-                (guess < stableValue && stableValue - guess >= 10 && stableValue - guess < 100)) {
-            quiteNear();
-        }
-        else if ((guess > stableValue && guess - stableValue >= 1 && guess - stableValue < 10) ||
-                (guess < stableValue && stableValue - guess >= 1 && stableValue - guess < 10)) {
-            reallyClose();
-        }
-        else if (guess == stableValue) {
-            congrats(stableValue);
-            System.exit(0);
-        }
         while (guess != stableValue)
         {
             try {
