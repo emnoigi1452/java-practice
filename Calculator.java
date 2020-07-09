@@ -306,10 +306,10 @@ class Calculator {
                             num1 = val1.nextDouble();
                         }
 
-                        for (int i = 2; i <= num1 / 2; ++i) {
+                        check: for (int i = 2; i <= num1 / 2; ++i) {
                             if(num1 % i == 0) {
                                 notPrime = true;
-                                break;
+                                break check;
                             }
                         }
                         if(!notPrime) {
