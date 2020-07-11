@@ -43,7 +43,7 @@ class Main {
             System.exit(0);
         }
 
-        numChoice = (int)Math.random() * ((3 - 1) + 1) + 1;
+        numChoice = (int)(Math.random() * ((3 - 1) + 1)) + 1;
         switch(numChoice) {
             case 1:
                 computerChoice = "Rock";
