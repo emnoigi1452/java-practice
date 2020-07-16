@@ -1,7 +1,7 @@
-//Replace all prime values in the array with 0
-//Generate the array with 35 elements placed in 5 rows
-//Completed on 16/07/2020
-//Version : 1.0
+// Replace all prime values in the array with 0
+// Generate the array with 35 elements placed in 5 rows
+// Completed on 16/07/2020
+// Version : 1.0
 
 class Main {
     public static void main(String[] args) {
