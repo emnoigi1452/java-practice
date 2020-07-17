@@ -9,11 +9,11 @@ class Main {
     static String command;
     static int n;
     static int i;
-    
+
     static void inputSize() {
         System.out.println("Input array size: ");
     }
-    
+
     static void input() {
         System.out.println("Input number in array, input 0 to stop.");
     }
@@ -25,17 +25,17 @@ class Main {
     static void invalidCmd() {
         System.out.println("Invalid command!");
     }
-    
+
     public static void main(String[] args) {
         inputSize();
         try {
-            size = new Scanner(System.in); 
+            size = new Scanner(System.in);
         }
         finally {
             i = size.nextInt();
         }
         input();
-        
+
         ArrayList<Integer> arr1 = new ArrayList<Integer>(i);
         for(n = 0; n < i; ++n) {
             try {
@@ -44,7 +44,7 @@ class Main {
             finally {
                 inputVal = input.nextInt();
             }
-            
+
             arr1.add(inputVal);
         }
         inputCmd();
@@ -61,6 +61,7 @@ class Main {
                     total += arr1.get(j);
                 }
                 System.out.println("Result is: " + total);
+                break;
             case "even":
                 int totalEven = 0;
                 for(int k = 0; k < i; ++k) {
@@ -69,8 +70,10 @@ class Main {
                     }
                 }
                 System.out.println("Result is: " + totalEven);
+                break;
             default:
                 invalidCmd();
+                break;
         }
     }
 }
