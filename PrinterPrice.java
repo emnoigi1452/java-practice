@@ -54,7 +54,7 @@ class Main {
                     printPrice = doc1.doublePage * 300;
                 }
                 else {
-                    printPrice = (100 * 300) + ((doc1.doublePage - 100) * 300);
+                    printPrice = (100 * 300) + ((doc1.doublePage - 100) * 280);
                 }
             }
             else {
@@ -66,7 +66,7 @@ class Main {
                     printPrice = doc1.doublePage * 300 + 220;
                 }
                 else {
-                    printPrice = (100 * 300) + ((doc1.doublePage) - 100) * 300 + 220;
+                    printPrice = (100 * 300) + ((doc1.doublePage) - 100) * 280 + 220;
                 }
             }
         }
