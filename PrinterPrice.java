@@ -1,4 +1,4 @@
-*/
+/*
 Printing a document, pricing goes like this:
 From page 1 - 100 : 1 sided print is 250 dong/page ; 2 sided print is 300 dong/page
 From page 100 onwards: 1 sided print is 220 dong/page ; 2 sided print is 280 dong/page
