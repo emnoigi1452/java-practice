@@ -45,7 +45,7 @@ class Main {
       }
     }
     for(Integer display: primeList) {
-      System.out.print(display + " ");
+      System.out.print(display + ", ");
     }
   }
 }
