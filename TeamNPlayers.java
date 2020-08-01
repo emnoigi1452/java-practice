@@ -66,6 +66,16 @@ class Main {
             int getTeamSize() {
                 return this.teamSize;
             }
+            void displayToString() {
+                if(team.isEmpty()) {
+                    System.out.println("Team has no members");
+                }
+                else {
+                    for(Player p: team) {
+                        System.out.println(p.getName() + ", goals: " + p.getGoals());
+                    }
+                }
+            }
         }
         Team team1 = new Team("School's FC Team");
         Player michael = new Player("Michael", 1);
@@ -76,9 +86,6 @@ class Main {
         team1.addPlayers(tommy);
         team1.addPlayers(david);
 
-        for(Player toString: team1.team) {
-            System.out.println(toString.getName() + ", goals: " + toString.getGoals());
-        }
         System.out.println("Total team goals: " + team1.getGoals());
 
     }
