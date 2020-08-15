@@ -46,7 +46,7 @@ class GuessingHandler {
     }
 
     public boolean isLarger() {
-        System.out.print("Is your number larger then " + getAverage() + "? ");
+        System.out.print("Is your number larger then " + getAverage() + "? (y/n) ");
         String param = sc.nextLine();
         if(param.equalsIgnoreCase("y")) {
             return true;
