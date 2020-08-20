@@ -1,87 +1,56 @@
-import java.util.ArrayList;
-import java.util.Scanner;
+package me.ductrader.exercise;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 
-class Dictionary {
-
-    public HashMap<String, String> contents;
-    public ArrayList<String> dictionaryList;
+public class Dictionary {
+    public HashMap<String, String> dictionary;
 
     public Dictionary() {
-        contents = new HashMap<>();
-        dictionaryList = new ArrayList<>();
+        dictionary = new HashMap<>();
     }
-
-    public String translate(String word) {
-        if (contents.containsKey(word)) {
-            return contents.get(word);
-        } else {
-            return "That word is not available in the dictionary";
+    public void getTranslation(String param) {
+        if(!dictionary.containsKey(param)) {
+            System.out.println("This word doesn't exist in the dictionary!");
+        }
+        else {
+            dictionary.get(param);
         }
     }
-
-    public void addTranslation(String word, String translateTo) {
-        contents.put(word, translateTo);
-    }
-
-    public void removeTranslation(String key) {
-        contents.remove(key);
-    }
-
-    public int getWordAmount() {
-        return contents.size();
-    }
-
-    public ArrayList<String> translation() {
-        ArrayList<String> wordList = new ArrayList<>();
-        for (String word : contents.keySet()) {
-            wordList.add(word + " = " + contents.get(word));
+    public void addTranslation(String paramKey, String translation) {
+        if(dictionary.containsKey(paramKey) && dictionary.get(paramKey).equalsIgnoreCase(translation)) {
+            System.out.println("That word has already been translated and stored within the dictionary's database!");
         }
-        return wordList;
-    }
-}
-
-class UserInterface extends Dictionary {
-    public String statement;
-    public String word;
-    public String translation;
-    public String returnParam;
-    public int words;
-    public Scanner readIn;
-
-    public UserInterface() {
-        words = this.words;
-        readIn = new Scanner(System.in);
-
-    }
-
-    public void statementHandler(String param) {
-        switch(param.toLowerCase()) {
-            case "add":
-                System.out.println("Input word: ");
-                word = readIn.nextLine();
-                System.out.println("Input translation: ");
-                translation = readIn.nextLine();
-                super.addTranslation(word, translation);
-            case "remove":
-                System.out.print("Input removed word: ");
-                word = readIn.nextLine();
-                super.removeTranslation(word);
-            case "quit":
-                System.out.println("Cheers!");
-                System.exit(0);
-            default:
-                System.out.println("Unrecognizable statement!");
+        else if(dictionary.containsKey(paramKey) && (!(dictionary.get(paramKey).equalsIgnoreCase(translation)))) {
+            System.out.println("Successfully modified " + paramKey + "! New translation: " + translation);
+        }
+        else {
+            dictionary.put(paramKey, translation);
+            System.out.println("Successfully added " + paramKey + " to the database. Translation: " + translation);
         }
     }
-
-    public void startInterface() {
-        String param = "";
-        while(!param.equalsIgnoreCase("quit")) {
-            System.out.println("Input statement: ");
-            param = readIn.nextLine();
-            statementHandler(param);
+    public void removeTranslation(String paramKey) {
+        if(!dictionary.containsKey(paramKey)) {
+            System.out.println("This word doesn't exist within the database!");
+        }
+        else {
+            System.out.println("Word removed!");
+            dictionary.remove(paramKey);
+        }
+    }
+    public int getWordCount() {
+        return dictionary.size();
+    }
+    public ArrayList<String> translations() {
+        ArrayList<String> words = new ArrayList<>();
+        for(String loadArray: dictionary.keySet()) {
+            words.add(loadArray + " - Translation: " + dictionary.get(loadArray));
+        }
+        return words;
+    }
+    public void printDictionary() {
+        for(String display: translations()) {
+            System.out.println(display);
         }
     }
 }
