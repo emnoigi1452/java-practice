@@ -29,7 +29,7 @@ class Suitcase {
     public Suitcase(int weightLimit) {
         this.weightLimit = weightLimit;
         things = new ArrayList<Thing>();
-        ;           }
+    }
 
     public int getWeightLimit() {
         return weightLimit;
