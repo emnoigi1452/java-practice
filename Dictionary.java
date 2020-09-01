@@ -63,9 +63,11 @@ class UserInterface extends Dictionary {
     public String cmd;
     public String[] args;
     public Scanner sc;
+    public int actions;
 
     public UserInterface() {
         this.sc = new Scanner(System.in);
+        this.actions = 0;
     }
     public void start() {
         while(true) {
@@ -83,6 +85,7 @@ class UserInterface extends Dictionary {
                     else {
                         super.getTranslation(args[1]);
                     }
+                    break;
                 case "addTranslation":
                     if(args.length != 3) {
                         System.out.println("Invalid arguments!");
@@ -90,6 +93,7 @@ class UserInterface extends Dictionary {
                     else {
                         super.addTranslation(args[1], args[2]);
                     }
+                    break;
                 case "editTranslation":
                     if(args.length != 3) {
                         System.out.println("Invalid arguments!");
@@ -97,6 +101,7 @@ class UserInterface extends Dictionary {
                     else {
                         super.editTranslation(args[1], args[2]);
                     }
+                    break;
                 case "remove":
                     if(args.length != 2) {
                         System.out.println("Invalid arguments!");
@@ -104,6 +109,7 @@ class UserInterface extends Dictionary {
                     else {
                         super.removeTranslation(args[1]);
                     }
+                    break;
                 case "print":
                     if(args.length != 1) {
                         System.out.println("Invalid arguments!");
@@ -111,6 +117,7 @@ class UserInterface extends Dictionary {
                     else {
                         super.printDictionary();
                     }
+                    break;
                 case "getSize":
                     if(args.length != 1) {
                         System.out.println("Invalid arguments!");
@@ -118,9 +125,15 @@ class UserInterface extends Dictionary {
                     else {
                         System.out.println("Dictionary size: " + super.getDictionarySize());
                     }
+                    break;
                 default:
                     System.out.println("Unknown command!");
+                    break;
             }
+            this.actions++;
         }
+    }
+    public int getActions() {
+        return this.actions;
     }
 }
