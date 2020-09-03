@@ -77,16 +77,22 @@ class Main {
             switch(getPointRating(grade)) {
                 case 0:
                     fail += "*";
+                    break;
                 case 1:
                     t1 += "*";
+                    break;
                 case 2:
                     t2 += "*";
+                    break;
                 case 3:
                     t3 += "*";
+                    break;
                 case 4:
                     t4 += "*";
+                    break;
                 case 5:
                     t5 += "*";
+                    break;
             }
         }
 
