@@ -13,6 +13,8 @@ If the storage unit would be empty after the removal, the method also removes th
 * [public ArrayList<String> storageUnits()] - returns the names of the storage units as a list.
 NB! Only the units that contain items are listed.
 
+*/
+
 import java.util.ArrayList;
 import java.util.HashMap;
 
