@@ -84,8 +84,6 @@ class BoxWithMaxWeight extends Box {
             if(list.equals(i)) {
                 inBox = true;
                 break;
-            } else {
-                inBox = false;
             }
         }
         return inBox;
