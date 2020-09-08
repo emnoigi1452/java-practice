@@ -74,6 +74,9 @@ class Box implements Package {
         for(int i = 0; i < cds.size(); i++) {
             weight += 0.1;
         }
+        for(Box bx: boxes) {
+            weight += bx.getBoxWeight();
+        }
         return weight;
     }
     public int getItemCount() {
@@ -82,6 +85,16 @@ class Box implements Package {
     }
     public void verifyItemCount() {
         this.itemCount = this.books.size() + this.cds.size();
+        for(Box b: boxes) {
+            this.itemCount += b.getItemCount();
+        }
+    }
+    public int getMiniBoxesAmount() {
+        if(this.boxes.size() == 0) {
+            return 0;
+        } else {
+            return this.boxes.size();
+        }
     }
 
     public void add(Book book) {
@@ -109,6 +122,7 @@ class Box implements Package {
         }
     }
     public String toString() {
-        return "Box: " + getItemCount() + " items - Total weight: " + getBoxWeight();
+        return "Box: " + getItemCount() + " items - Total weight: " + getBoxWeight()
+                + "kg\nContaining: " + getMiniBoxesAmount() + " smaller boxes.";
     }
 }
