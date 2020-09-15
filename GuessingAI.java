@@ -118,7 +118,7 @@ public class Main {
                             start = Integer.parseInt(param[x]);
                         } catch(NumberFormatException e) {
                             System.out.println("Start value has to be an integer!");
-                            System.out.println("Error: " + e.getMessage());
+                            System.out.println("Error caused by: " + e.getMessage());
                             System.out.println("Ending program...");
                             System.exit(-1);
                         }
@@ -127,7 +127,7 @@ public class Main {
                             end = Integer.parseInt(param[x]);
                         } catch(NullPointerException e) {
                             System.out.println("Start value has to be an integer!");
-                            System.out.println("Error: " + e.getMessage());
+                            System.out.println("Error caused by: " + e.getMessage());
                             System.out.println("Ending program...");
                             System.exit(-1);
                         }
