@@ -45,10 +45,10 @@ class GuessingGame {
         return c;
     }
     private void constructInstruction() {
-        this.instructions.add("Successfully setup range for guessing, range is at " + getRangeLength());
+        this.instructions.add("Successfully setup range for guessing, range is at " + getRangeLength() + " elements");
         this.instructions.add("Now, i'll ask you a series of questions, you must answer either yes or no");
         this.instructions.add("Please answer them truthfully, otherwise i'm unable to guess what number you're referring to");
-        this.instructions.add("I can guarantee i'll have your number after " + getAttempts() + " tries. Now let us begin.");
+        this.instructions.add("I can guarantee i'll have your number in under " + getAttempts() + " tries. Now let us begin.");
     }
     public void getInstructions() {
         this.constructInstruction();
@@ -75,7 +75,7 @@ class GuessingGame {
         String defaultRange = this.getStart() + " - " + this.getEnd();
         int elementCount = (this.getEnd() - this.getStart()) + 1;
         int giveNum = 0;
-        for(int x = 0; x < limit; x++) {
+        for(int x = 0; x < limit - 1; x++) {
             System.out.println("Is your number larger then " + getAverageValue() + "? (Type 'yes (y)' or 'no (n)'): ");
             String i = reader.nextLine();
             if(getAnswer(i)) {
