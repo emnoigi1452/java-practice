@@ -1,3 +1,4 @@
+
 package me.ductrader.javapractice;
 
 import java.util.ArrayList;
@@ -27,11 +28,23 @@ public class Main {
                 break;
             }
         }
-        double avg = inputs.stream()
-                .filter(str -> isNumeric(String.valueOf(str)))
-                .mapToDouble(Integer::parseInt)
-                .average()
-                .getAsDouble();
-        System.out.println("Average: " + avg);
+        System.out.print("Print negative or positive (p/n): ");
+        String options = reader.nextLine();
+        double output = 0;
+        if(options.equalsIgnoreCase("p")) {
+            output = inputs.stream()
+                    .filter(str -> isNumeric(String.valueOf(str)) && Integer.parseInt(str) >= 0)
+                    .mapToDouble(Integer::parseInt)
+                    .average()
+                    .getAsDouble();
+            System.out.println("Average of all positive values: " + output);
+        } else {
+            output = inputs.stream()
+                    .filter(str -> isNumeric(String.valueOf(str)) && Integer.parseInt(str) < 0)
+                    .mapToDouble(Integer::parseInt)
+                    .average()
+                    .getAsDouble();
+            System.out.println("Average of all negative values: " + output);
+        }
     }
 }
