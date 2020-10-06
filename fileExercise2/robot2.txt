@@ -1,0 +1,3 @@
+Robot will move to: 6
+Robot will move to: 3
+Robot will move to: 9
