@@ -1,53 +1,81 @@
-/*
-Program written to display all multiples of 11 with 'n' digits
-'n' is being inputted by user. n can only be selected from 2-10
-*/
+package me.ductrader.javapractice;
 
-import java.util.Scanner;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
 
 class Main {
+    public static List<Integer> multiples(int dc) {
+        List<Integer> nl = new ArrayList<>();
+        if(dc < 2 || dc >= 10) {
+            System.out.println("Value out of range! Please only put an integer" +
+                    " between 2-9");
+        } else {
+            for(int k = (int)Math.pow(10, dc - 1); k < (int)Math.pow(10, dc); k++) {
+                if(k % 11 == 0) {
+                    nl.add(k);
+                }
+            }
+        }
+        return nl;
+    }
+
     public static void main(String[] args) {
-        System.out.print("Input digit count: ");
-
-        Scanner inputDigit = new Scanner(System.in);
-        int n = inputDigit.nextInt();
-        
-        if(n >= 2 && n <= 10) {
-            System.out.println("Verified value, calculating...");
-        }
-        else {
-            System.out.println("Invalid value, n can only be numbers from 2-10");
-        }
-
-        ArrayList<Integer> numList = new ArrayList<Integer>();
-
-        int j = 0; //Amount of digits
-        int multiplier = 1; //Multiplier for 11
-
-        for(int i = 0; j <= n; i++) {
-            j = 0;
-            int num = 11 * multiplier;
-            int numDisplay = num;
-            for (j = 0; num >= 1; j++) {
-                num /= 10; //Count digits
+        File f1 = new File("multiples.in");
+        File f2 = new File("multiples.out");
+        if(!f1.exists()) {
+            System.out.println(f1.getName() + " doesn't seem to exist, creating...");
+            try {
+                f1.createNewFile();
+                System.out.println("File successfully generated!");
+            } catch(IOException e) {
+                System.out.println("An error occurred!");
+                e.printStackTrace();
             }
-            if(j > n) {
-                break;
+        } else if(!f2.exists()) {
+            System.out.println(f2.getName() + " doesn't seem to exist, creating...");
+            try {
+                f2.createNewFile();
+                System.out.println("File successfully generated!");
+            } catch(IOException e) {
+                System.out.println("An error occurred!");
+                e.printStackTrace();
             }
-            else if (j < n) {
-                multiplier++;
+        } else {
+            try {
+                Scanner sc = new Scanner(f1);
+                FileWriter writer = new FileWriter(f2);
+                if(!(sc.hasNextLine())) {
+                    System.out.println("File is empty!");
+                } else {
+                    String p = sc.nextLine(); int a = 0;
+                    try {
+                        a = Integer.parseInt(p);
+                    } catch(NumberFormatException n) {
+                        System.out.println("Value doesn't seem to be an integer!");
+                        n.printStackTrace();
+                    }
+                    List<Integer> mList = multiples(a);
+                    for(int c = 0; c < mList.size(); c++) {
+                        if(c % 15 == 0 && c != 0) {
+                            writer.write(mList.get(c) + ",\n");
+                        } else if(c % 15 != 0 && mList.get(c).equals(mList.get(mList.size() - 1))) {
+                            writer.write(mList.get(c) + ".");
+                        } else {
+                            writer.write(mList.get(c) + ", ");
+                        }
+                    }
+                    writer.flush();
+                    writer.close();
+                }
+            } catch(IOException e) {
+                System.out.println("An error occurred!");
+                e.printStackTrace();
             }
-            else if (j == n) {
-                numList.add(numDisplay);
-                multiplier++;
-            }
-
         }
-
-        System.out.println("Displaying all multiples of 11 with " + n + " digits: ");
-        for (Integer integer : numList) {
-            System.out.print(integer + ", ");
-        }
+        System.out.println("Finished generation, please check " + f2.getName() + " for results");
     }
 }
