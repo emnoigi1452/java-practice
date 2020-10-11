@@ -80,7 +80,10 @@ class Main {
                         if(isInt) {
                             List<Integer> aNums = armstrongList(p);
                             writer.write("Armstrong numbers with " + p + " digits: ");
-                            for(Integer a: aNums) {
+                            if(aNums.isEmpty()) {
+                                writer.write("No armstrong numbers found!");
+                            } else {
+                                for(Integer a: aNums) {
                                 if(isLastElement(aNums, a)) {
                                     writer.write(a + ".\n");
                                 } else {
