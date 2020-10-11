@@ -1,6 +1,3 @@
-// Armstrong number: A number where the sum of each digits to the power of its length is equal to itself
-// Written with IntelliJ and Codota A.I.
-
 package me.ductrader.javapractice;
 
 import java.io.File;
@@ -11,13 +8,16 @@ import java.util.List;
 import java.util.Scanner;
 
 class Main {
+    public static int getDigit(String num, int index) {
+        return Integer.parseInt(String.valueOf(num.charAt(index)));
+    }
     public static List<Integer> armstrongList(int d) {
         List<Integer> filtered = new ArrayList<Integer>();
         if(d <= 9 && d > 0) {
             for(int k = (int)Math.pow(10, d -1); k < (int)Math.pow(10, d); k++) {
-                int t = 0; String s = Integer.toString(k);
+                int t = 0; String s = Integer.toString(k); int len = s.length();
                 for(int x = 0; x < s.length(); x++) {
-                    t += (int)Math.pow(Integer.parseInt(String.valueOf(s.charAt(x))), s.length());
+                    t += (int)Math.pow(getDigit(s, x), s.length());
                 }
                 if(t == k) {
                     filtered.add(k);
