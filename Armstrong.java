@@ -17,7 +17,7 @@ class Main {
             for(int k = (int)Math.pow(10, d -1); k < (int)Math.pow(10, d); k++) {
                 int t = 0; String s = Integer.toString(k); int len = s.length();
                 for(int x = 0; x < s.length(); x++) {
-                    t += (int)Math.pow(getDigit(s, x), s.length());
+                    t += (int)Math.pow(getDigit(s, x), len);
                 }
                 if(t == k) {
                     filtered.add(k);
