@@ -1,4 +1,3 @@
-
 package me.ductrader.javapractice;
 
 import java.io.File;
