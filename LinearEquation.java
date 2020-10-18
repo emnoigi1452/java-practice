@@ -84,7 +84,7 @@ public class Main {
                                 if(a == 0) {
                                     writer.write("Infinite values of x\n\n");
                                 } else {
-                                    writer.write("x has a value of x\n\n");
+                                    writer.write("x has a value of 0\n\n");
                                 }
                             } else {
                                 if(a == 0) {
