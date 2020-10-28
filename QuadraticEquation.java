@@ -26,7 +26,9 @@ public class Main {
         try {
             Scanner sc = new Scanner(f1);
             FileWriter writer = new FileWriter(f2);
+            int line = 0;
             while(sc.hasNextLine()) {
+               line++;
                 String s = sc.nextLine();
                 String[] nums = s.split(" ");
                 for(int k = 0; k < 3; k++) {
@@ -38,7 +40,7 @@ public class Main {
                     }
                 }
                 double a = Double.parseDouble(nums[0]); double b = Double.parseDouble(nums[1]); double c = Double.parseDouble(nums[2]);
-                writer.write("Equation #1: ax^2 + bx + c - With a = " + a + ", b = " + b + ", c = " + c + "\n");
+                writer.write("Equation #” + line + “ax^2 + bx + c - With a = " + a + ", b = " + b + ", c = " + c + "\n");
                 double dt = b*b - 4*a*c;
                 if(dt < 0) {
                     writer.write("This equation has no valid value!\n");
