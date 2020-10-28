@@ -40,7 +40,7 @@ public class Main {
                     }
                 }
                 double a = Double.parseDouble(nums[0]); double b = Double.parseDouble(nums[1]); double c = Double.parseDouble(nums[2]);
-                writer.write("Equation #” + line + “ax^2 + bx + c - With a = " + a + ", b = " + b + ", c = " + c + "\n");
+                writer.write("Equation #" + line + ": ax^2 + bx + c - With a = " + a + ", b = " + b + ", c = " + c + "\n");
                 double dt = b*b - 4*a*c;
                 if(dt < 0) {
                     writer.write("This equation has no valid value!\n");
