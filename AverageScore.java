@@ -59,12 +59,23 @@ public class Main {
                 if(sc.hasNextLine()) {
                     String h = sc.nextLine();
                     double[] scores = new double[h.split(" ").length]; int index = 0;
-                    for(int z = 0; z < h.split(" ").length; z++) {
-                        if(isNumeric(h.split(" ")[z]) && Double.parseDouble(h.split(" ")[z]) <= 10 &&
-                                Double.parseDouble(h.split(" ")[z]) >= 0) {
-                            scores[index] = Double.parseDouble(h.split(" ")[z]); index++;
-                        } else {
-                            wr.write("Invalid scores!"); wr.flush(); wr.close(); break main;
+                    if(k != 2) {
+                            for(int z = 0; z < h.split(" ").length; z++) {
+                            if(isNumeric(h.split(" ")[z]) && Double.parseDouble(h.split(" ")[z]) <= 10 &&
+                                    Double.parseDouble(h.split(" ")[z]) >= 0) {
+                                scores[index] = Double.parseDouble(h.split(" ")[z]); index++;
+                            } else {
+                                wr.write("Invalid scores!"); wr.flush(); wr.close(); break main;
+                            }
+                        }   
+                    } else {
+                        for(int x = 0; x < 2; x++) {
+                            if(isNumeric(h.split(" ")[z]) && Double.parseDouble(h.split(" ")[z]) <= 10 &&
+                                    Double.parseDouble(h.split(" ")[z]) >= 0) {
+                                scores[index] = Double.parseDouble(h.split(" ")[z]); index++;
+                            } else {
+                                wr.write("Invalid scores!"); wr.flush(); wr.close(); break main;
+                            }
                         }
                     }
                     switch (k) {
