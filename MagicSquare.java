@@ -34,7 +34,7 @@ class Main {
     public static void main(String[] args) {
         File f1 = new File("magic.in");
         File f2 = new File("magic.out");
-        boolean reload = false; int count = 0;
+        int count = 0;
         if(!(f1.exists())) {
             try {
                 f1.createNewFile(); count++;
