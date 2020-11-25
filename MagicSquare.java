@@ -64,11 +64,12 @@ class Main {
                 while(sc.hasNextInt()) {
                     int size = sc.nextInt(); // Indicate magic square size
                     if(size % 2 == 1 && size >= 3) {
-                        writer.println("Begin generation - " + size + "x" + size + " magic square"); actions++;
+                        int magicSum = (size*(size*size + 1)) / 2;
+                        writer.println("Begin generation - " + size + "x" + size + " magic square - Magic sum: " + magicSum); actions++;
                         int[][] generated = matrix(size);
                         for(int a = 0; a < size; a++) {
                             for(int b = 0; b < size; b++) {
-                                writer.write(generated[a][b] + " ");
+                                writer.write(generated[a][b] + "     ");
                             }
                             writer.println("");
                         }
