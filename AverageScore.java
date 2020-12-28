@@ -115,6 +115,5 @@ public class Main {
 		System.out.println("Đã hoàn thành tính toán! Xem kết quả trong tập tin " + output.getName());
 		if(invalidChecks > 0) System.out.println("Đã phát hiện " + invalidChecks + " điểm không hợp lệ!"); 
 		System.out.print("Code bởi Đức Hải Cẽo :') Chào nhé :3");
-		System.exit(-1);
 	}
 }
